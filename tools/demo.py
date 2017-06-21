@@ -18,7 +18,8 @@
 #   Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences
 #
 #
-
+import sys
+sys.path.append('/home/arka_s/Caffe/cf/caffe/python/')
 from cfg import Config as cfg
 from other import draw_boxes, resize_im, CaffeModel
 import cv2, os, caffe, sys
@@ -43,7 +44,7 @@ text_detector=TextDetector(text_proposals_detector)
 demo_imnames=os.listdir(DEMO_IMAGE_DIR)
 timer=Timer()
 
-for im_name in demo_imnames:
+for im_name in demo_imnames[:1]:
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Image: %s"%im_name
 
@@ -62,5 +63,5 @@ for im_name in demo_imnames:
 
 print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 print "Thank you for trying our demo. Press any key to exit..."
-cv2.waitKey(0)
+# cv2.waitKey(0)
 

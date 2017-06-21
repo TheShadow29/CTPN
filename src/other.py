@@ -1,4 +1,5 @@
 import cv2, caffe
+import skimage.io as skio
 import numpy as np
 from matplotlib import cm
 
@@ -26,9 +27,11 @@ def draw_boxes(im, bboxes, is_display=True, color=None, caption="Image", wait=Tr
             c=color
         cv2.rectangle(im, tuple(box[:2]), tuple(box[2:4]), c)
     if is_display:
-        cv2.imshow(caption, im)
-        if wait:
-            cv2.waitKey(0)
+        # cv2.imshow(caption, im)
+        skio.imshow(im)
+        skio.show()
+        # if wait:
+            # cv2.waitKey(0)
     return im
 
 
