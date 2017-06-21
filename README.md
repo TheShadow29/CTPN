@@ -12,6 +12,10 @@ wget http://textdet.com/downloads/ctpn_trained_model.caffemodel -P models/
 # run the demo
 ./tools/demo.py
 ```
+3. Extra fixes required:
+`git checkout CTPN`
+In Makefile.config do 
+`WITH_PYTHON_LAYER = 1`
 
 # Detecting Text in Natural Image with Connectionist Text Proposal Network
 The codes are used for implementing CTPN for scene text detection, described in: 
